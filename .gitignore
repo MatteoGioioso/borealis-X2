@@ -3,6 +3,8 @@
 *.exe~
 *.dll
 *.so
+*.bc
+*.o
 *.dylib
 
 # Test binary, built with `go test -c`
@@ -14,3 +16,4 @@
 # Dependency directories (remove the comment below to include it)
 # vendor/
 .idea
+.vscode

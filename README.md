@@ -11,6 +11,7 @@ Research project for bi-directional replication in PostgreSQL
 - [postgresql-bdr-is-bdr-truly-multi-master-is-it-open-source-and-eol-for-1-x-i](https://stackoverflow.com/questions/51893065/postgresql-bdr-is-bdr-truly-multi-master-is-it-open-source-and-eol-for-1-x-i "smartCard-inline")
 - [postgresql-bi-directional-replication-using-pglogical/](https://aws.amazon.com/blogs/database/postgresql-bi-directional-replication-using-pglogical/ "‌")
 - [BDR extension repository entrypoint file](https://github.com/2ndQuadrant/bdr/blob/REL0_9_94b2/bdr.c)
+- [Webinar: pglogical and Postgres BDR update by Simon Riggs](https://www.youtube.com/watch?v=C-iRd_fkZdE&ab_channel=2ndQuadrant%2CanEDBcompany)
 
 #### Writing an extension
 

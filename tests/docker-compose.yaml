@@ -1,0 +1,24 @@
+version: "3.9"
+
+services:
+  postgres_one:
+    container_name: postgres_one
+    image: postgres-borealisx2:latest
+    build:
+      context: ../extension
+      dockerfile: Dockerfile
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+    command: -c wal_level=logical
+    ports:
+      - "5001:5432"
+
+  postgres_two:
+    container_name: postgres_two
+    image: postgres:15
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+    ports:
+      - "5002:5432"
