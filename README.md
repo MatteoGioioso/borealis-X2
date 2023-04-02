@@ -17,5 +17,5 @@ Research project for bi-directional replication in PostgreSQL
 
 - Citus extension entrypoint: [https://github.com/citusdata/citus/blob/main/src/backend/distributed/shared_library_init.c](https://github.com/citusdata/citus/blob/main/src/backend/distributed/shared_library_init.c "smartCard-inline")
 - Example extensions: [https://github.com/postgres/postgres/tree/master/src/test/modules](https://github.com/postgres/postgres/tree/master/src/test/modules "smartCard-inline")
-- Postgres docs about extensions: [https://www.postgresql.org/docs/current/extend.html](https://www.postgresql.org/docs/current/extend.html "smartCard-inline")
+- Postgres docs about extensions: [C language functions](https://www.postgresql.org/docs/current/xfunc-c.html "smartCard-inline")
 - [Hooks\_in\_postgresql.pdf](https://wiki.postgresql.org/images/e/e3/Hooks_in_postgresql.pdf "‌")
