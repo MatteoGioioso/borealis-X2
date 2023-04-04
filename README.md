@@ -19,3 +19,14 @@ Research project for bi-directional replication in PostgreSQL
 - Example extensions: [https://github.com/postgres/postgres/tree/master/src/test/modules](https://github.com/postgres/postgres/tree/master/src/test/modules "smartCard-inline")
 - Postgres docs about extensions: [C language functions](https://www.postgresql.org/docs/current/xfunc-c.html "smartCard-inline")
 - [Hooks\_in\_postgresql.pdf](https://wiki.postgresql.org/images/e/e3/Hooks_in_postgresql.pdf "‌")
+
+#### Postgres internals
+- Background workers: https://www.postgresql.org/docs/current/bgworker.html
+- C language functions: https://www.postgresql.org/docs/current/xfunc-c.html
+- SPI: https://www.postgresql.org/docs/current/spi.html
+- Extension points: https://wiki.postgresql.org/wiki/PostgresServerExtensionPoints
+
+#### Useful functions
+
+- `SetConfigOption("lock_timeout", "10000", PGC_USERSET, PGC_S_SESSION);` can be used to set options
+- `MemoryContextSwitchTo`: what is this function, why and when is needed?

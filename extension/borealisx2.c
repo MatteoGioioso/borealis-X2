@@ -4,15 +4,21 @@
 #include "executor/execdesc.h"
 #include "executor/executor.h"
 #include "utils/elog.h"
+#include "borealisx2.h"
 
 PG_MODULE_MAGIC;
 
 void _PG_init(void);
 void _PG_fini(void);
-static ExecutorStart_hook_type PrevExecutorStart_hook = NULL;
-static void Bx2ExecutorStart(QueryDesc *queryDesc, int eflags);
+
+PGDLLEXPORT Datum version(PG_FUNCTION_ARGS);
 
 PG_FUNCTION_INFO_V1(version);
+
+static ExecutorStart_hook_type PrevExecutorStart_hook = NULL;
+static void bx2_executor_start(QueryDesc *queryDesc, int eflags);
+
+
 Datum
 version(PG_FUNCTION_ARGS)
 {
@@ -28,8 +34,8 @@ _PG_init(void)
 {
 	elog(LOG, "Starting Borealisx2");
 
-	PrevExecutorStart_hook = ExecutorStart_hook;
-	ExecutorStart_hook = Bx2ExecutorStart;
+	// PrevExecutorStart_hook = ExecutorStart_hook;
+	// ExecutorStart_hook = bx2_executor_start;
 }
 
 /*
@@ -39,9 +45,9 @@ _PG_init(void)
  * Runs in all backends and workers.
  */
 static void
-Bx2ExecutorStart(QueryDesc *queryDesc, int eflags)
+bx2_executor_start(QueryDesc *queryDesc, int eflags)
 {	
-	elog(LOG, "hook called with query source text: %s", queryDesc->sourceText);
+	elog(LOG, "hook called");
 	standard_ExecutorStart(queryDesc, eflags);
 }
 

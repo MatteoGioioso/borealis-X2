@@ -10,15 +10,25 @@ services:
     environment:
       POSTGRES_PASSWORD: postgres
       POSTGRES_USER: postgres
+      POSTGRES_REPLICATION_USER: postgres
+      POSTGRES_REPLICATION_PASSWORD: postgres
+      POSTGRES_REPLICATION_HOST: postgres_one
     command: -c wal_level=logical -c shared_preload_libraries='borealisx2'
     ports:
       - "5001:5432"
 
   postgres_two:
     container_name: postgres_two
-    image: postgres:15
+    image: postgres-borealisx2:latest
+    build:
+      context: ../extension
+      dockerfile: Dockerfile
     environment:
       POSTGRES_PASSWORD: postgres
       POSTGRES_USER: postgres
+      POSTGRES_REPLICATION_USER: postgres
+      POSTGRES_REPLICATION_PASSWORD: postgres
+      POSTGRES_REPLICATION_HOST: postgres_toe
+    command: -c wal_level=logical -c shared_preload_libraries='borealisx2'
     ports:
       - "5002:5432"
